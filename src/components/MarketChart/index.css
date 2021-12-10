@@ -1,6 +1,13 @@
 .chart-container {
   position: relative;
   border-radius: 2px;
-  padding: 48px 24px;
   margin-top: 36px;
+  height: 500px;
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .chart-container {
+    display: block;
+  }
 }

@@ -1,8 +1,9 @@
 import './app.css';
 import { useEffect, useState } from 'react';
-import MarketChart from './components/MarketChart/MarketChart';
+import MarketChart from './components/MarketChart';
 import { fetchBitcoinMarketData } from './utils/coinGeckoApi';
 import { oneMonthBefore, toDateInputValue } from './utils/time';
+import * as MarketAnalyzer from './utils/marketAnalyzer';
 
 const MIN_DATE = '2013-04-28';
 const INITIAL_START_TIME = oneMonthBefore(Date.now());
@@ -23,6 +24,10 @@ function App() {
       setVolumes(volumes);
     });
   }, [startTime, endTime]);
+
+  const longestBearishTrend = MarketAnalyzer.longestBearishTrend(prices);
+  const highestTradingVolume = MarketAnalyzer.highestTradingVolume(volumes);
+  const maximumProfit = MarketAnalyzer.maximumProfit(prices);
 
   return (
     <div>
@@ -63,6 +68,40 @@ function App() {
                 )
               }
             />
+          </div>
+        </div>
+
+        <div className="cards">
+          <div className="card">
+            <h3>Longest bearish trend</h3>
+            <p class="card-focal">{longestBearishTrend.trendLength} days</p>
+            <p>
+              {longestBearishTrend.startDate} - {longestBearishTrend.endDate}
+            </p>
+          </div>
+          <div className="card">
+            <h3>Highest trading volume</h3>
+            <p class="card-focal">
+              {highestTradingVolume.volume
+                .toFixed(0)
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}{' '}
+              €
+            </p>
+            <p>{highestTradingVolume.date}</p>
+          </div>
+          <div className="card">
+            <h3>Maximum profit</h3>
+            <p class="card-focal">{maximumProfit.profit.toFixed(2)} € / BTC</p>
+            <div>
+              {maximumProfit.buyDate ? (
+                <div>
+                  <p>Should be bought on {maximumProfit.buyDate}</p>
+                  <p>Should be sold on {maximumProfit.sellDate}</p>
+                </div>
+              ) : (
+                <p>Bitcoin should not be bought on the selected date range</p>
+              )}
+            </div>
           </div>
         </div>
 

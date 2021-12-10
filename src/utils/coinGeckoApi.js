@@ -19,7 +19,7 @@ function oneByDate(data) {
   const oneByDate = {};
   data.forEach(([time, value]) => {
     const utcDate = toUTCDateString(time);
-    oneByDate[utcDate] = oneByDate[utcDate] || value.toFixed(2);
+    oneByDate[utcDate] = oneByDate[utcDate] || value;
   });
   return oneByDate;
 }

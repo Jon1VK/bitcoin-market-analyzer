@@ -9,6 +9,7 @@ function MarketChart({ pricesByDate, volumesByDate }) {
 
   useEffect(() => {
     chartRef.current = new Chart(canvasRef.current, config);
+    chartRef.current.options.maintainAspectRatio = false;
     return () => chartRef.current.destroy();
   }, []);
 
@@ -20,7 +21,7 @@ function MarketChart({ pricesByDate, volumesByDate }) {
 
   return (
     <div className="chart-container">
-      <canvas ref={canvasRef} height="100"></canvas>
+      <canvas ref={canvasRef}></canvas>
     </div>
   );
 }
