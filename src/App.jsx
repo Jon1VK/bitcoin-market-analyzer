@@ -1,4 +1,5 @@
 import './app.css';
+import logo from './logo.svg';
 import { useEffect, useState } from 'react';
 import MarketChart from './components/MarketChart';
 import { fetchBitcoinMarketData } from './utils/coinGeckoApi';
@@ -32,7 +33,7 @@ function App() {
   return (
     <div>
       <header className="header">
-        <img src="/logo.svg" width="60" height="60" alt="Bitcoin Icon" />{' '}
+        <img src={logo} width="60" height="60" alt="Bitcoin Icon" />{' '}
         <h1>Bitcoin Market Analyzer</h1>
       </header>
 

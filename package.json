@@ -2,7 +2,7 @@
   "name": "bitcoin-market-analyzer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/jon1vk/bitcoin-market-analyzer",
+  "homepage": "https://jon1vk.github.io/bitcoin-market-analyzer/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.2.7",
