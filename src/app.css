@@ -73,6 +73,11 @@ input {
   font-weight: 700;
 }
 
+.card time {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 @media screen and (min-width: 768px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);

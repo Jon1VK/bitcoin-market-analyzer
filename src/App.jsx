@@ -37,7 +37,7 @@ function App() {
       </header>
 
       <main>
-        <h2>Enter the date range to be analyzed</h2>
+        <h3>The date range to be analyzed</h3>
         <div className="date-inputs">
           <div className="input-group">
             <label htmlFor="fromInput">Start date</label>
@@ -95,8 +95,11 @@ function App() {
             <div>
               {maximumProfit.buyDate ? (
                 <div>
-                  <p>Should be bought on {maximumProfit.buyDate}</p>
-                  <p>Should be sold on {maximumProfit.sellDate}</p>
+                  <p>
+                    If Bitcoins were bought on{' '}
+                    <time>{maximumProfit.buyDate}</time> and sold on{' '}
+                    <time>{maximumProfit.sellDate}</time>
+                  </p>
                 </div>
               ) : (
                 <p>Bitcoin should not be bought on the selected date range</p>
