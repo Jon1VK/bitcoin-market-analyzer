@@ -1,3 +1,4 @@
+import './index.css';
 import Chart from 'chart.js/auto';
 import { useEffect, useRef } from 'react';
 import config from './config';
@@ -18,7 +19,7 @@ function MarketChart({ pricesByDate, volumesByDate }) {
   }, [pricesByDate, volumesByDate]);
 
   return (
-    <div>
+    <div className="chart-container">
       <canvas ref={canvasRef} height="100"></canvas>
     </div>
   );

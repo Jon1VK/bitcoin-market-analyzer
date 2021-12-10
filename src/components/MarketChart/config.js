@@ -1,3 +1,17 @@
+import { Tooltip } from 'chart.js';
+
+Tooltip.positioners.bottom = function (items) {
+  const chart = this._chart;
+  const pos = Tooltip.positioners.average(items);
+
+  return pos
+    ? {
+        x: pos.x,
+        y: chart.chartArea.bottom,
+      }
+    : false;
+};
+
 const config = {
   data: {
     datasets: [
@@ -5,7 +19,7 @@ const config = {
         label: 'Price',
         type: 'line',
         backgroundColor: 'rgb(242, 169, 0)',
-        borderColor: 'rgb(77, 77, 78)',
+        borderColor: 'rgb(242, 169, 0)',
         pointRadius: '0',
         segment: {
           borderColor: (ctx) =>
@@ -16,8 +30,8 @@ const config = {
       },
       {
         label: 'Volume',
-        backgroundColor: 'rgb(242, 169, 0, 0.3)',
-        hoverBackgroundColor: 'rgb(242, 169, 0)',
+        backgroundColor: 'rgb(0, 0, 0, 0.2)',
+        hoverBackgroundColor: 'rgb(0, 0, 0, 0.6)',
         type: 'bar',
         yAxisID: 'y2',
       },
@@ -29,18 +43,61 @@ const config = {
       mode: 'index',
     },
     scales: {
+      x: {
+        ticks: {
+          autoSkipPadding: 12,
+          maxRotation: 30,
+        },
+      },
       y: {
         type: 'linear',
         position: 'left',
+        title: {
+          display: true,
+          text: 'Price [€ / BTC]',
+        },
       },
       y2: {
         type: 'linear',
         position: 'right',
+        title: {
+          display: true,
+          text: 'Volume [€]',
+        },
       },
     },
     plugins: {
       legend: {
         display: false,
+      },
+      title: {
+        display: true,
+        text: 'Daily price and trading volume of Bitcoin',
+        color: 'black',
+        font: {
+          family: '"Ubuntu", sans-serif',
+          weight: 'bold',
+          size: 18,
+        },
+      },
+      tooltip: {
+        position: 'bottom',
+        xAlign: 'center',
+        yAlign: 'bottom',
+        usePointStyle: true,
+        caretPadding: 4,
+        callbacks: {
+          label: (item) => `${item.dataset.label} ${item.formattedValue} €`,
+          labelPointStyle: () => ({
+            pointStyle: 'circle',
+            pointRadius: 0,
+          }),
+        },
+      },
+    },
+    elements: {
+      point: {
+        hoverRadius: '6',
       },
     },
   },
