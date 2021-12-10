@@ -1,62 +1,73 @@
-export function longestBearishTrend(prices) {
-  let longest = 0,
-    current = 0;
-
-  for (let i = 1; i < prices.length; i++) {
-    if (prices[i][1] < prices[i - 1][1]) {
-      current++;
-    } else {
-      current = 0;
-    }
-
-    if (current > longest) {
-      longest = current;
-    }
-  }
-
-  return longest;
-}
-
-export function highestTradingVolume(volumes) {
-  if (volumes.length === 0) {
-    return null;
-  }
-
-  return volumes.reduce((highest, current) =>
-    highest[1] > current[1] ? highest : current
-  );
-}
-
-export function maximumProfit(prices) {
+export function longestBearishTrend(pricesByDate) {
   let result = {
-    profit: 0,
-    buyDate: null,
-    sellDate: null,
+    startDate: null,
+    endDate: null,
+    trendLength: 0,
   };
 
-  if (prices.length === 0) {
-    return result;
-  }
+  let startDate, endDate, trendLength;
 
-  let minPrice = prices[0];
-
-  for (let i = 1; i < prices.length; i++) {
-    const price = prices[i];
-
-    if (price[1] < minPrice[1]) {
-      minPrice = price;
+  Object.entries(pricesByDate).forEach(([date, price], index, array) => {
+    if (index === 0 || price >= array[index - 1][1]) {
+      startDate = date;
+      trendLength = 0;
+      return;
     }
 
-    const profit = price[1] - minPrice[1];
+    trendLength++;
+    endDate = date;
+
+    if (trendLength > result.trendLength) {
+      result = {
+        startDate,
+        endDate,
+        trendLength,
+      };
+    }
+  });
+
+  return result;
+}
+
+export function highestTradingVolume(volumesByDate) {
+  let result = {
+    date: null,
+    volume: 0,
+  };
+
+  function highestVolumeReducer(result, [date, volume]) {
+    return volume > result.volume ? { date, volume } : result;
+  }
+
+  return Object.entries(volumesByDate).reduce(highestVolumeReducer, result);
+}
+
+export function maximumProfit(pricesByDate) {
+  let result = {
+    buyDate: null,
+    sellDate: null,
+    profit: 0,
+  };
+
+  let buyDate, minimumPrice;
+
+  Object.entries(pricesByDate).forEach(([date, price], index) => {
+    if (index === 0 || price < minimumPrice) {
+      minimumPrice = price;
+      buyDate = date;
+      return;
+    }
+
+    const profit = price - minimumPrice;
 
     if (profit > result.profit) {
       result = {
+        buyDate,
+        sellDate: date,
         profit,
-        buyDate: minPrice[0],
-        sellDate: price[0],
       };
     }
-  }
+  });
 
   return result;
 }

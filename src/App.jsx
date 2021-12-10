@@ -27,6 +27,10 @@ function App() {
     });
   }, [startTime, endTime]);
 
+  const longestTrend = longestBearishTrend(prices);
+  const highestVolume = highestTradingVolume(volumes);
+  const maximumProfitObj = maximumProfit(prices);
+
   return (
     <div>
       <h1>Bitcoin Market Analyzer</h1>
@@ -58,15 +62,17 @@ function App() {
         within a given date range?
       </h2>
 
-      <p>{longestBearishTrend(prices)}</p>
+      <p>{longestTrend.startDate}</p>
+      <p>{longestTrend.endDate}</p>
+      <p>{longestTrend.trendLength}</p>
 
       <h2>
         Assignment 2: Which date within a given date range had the highest
         trading volume?
       </h2>
 
-      <p>{highestTradingVolume(volumes)?.[0]}</p>
-      <p>{highestTradingVolume(volumes)?.[1]}</p>
+      <p>{highestVolume.date}</p>
+      <p>{highestVolume.volume}</p>
 
       <h2>
         Assignment 3: For a given date range, what is the best day for buying
@@ -74,9 +80,9 @@ function App() {
         profits?
       </h2>
 
-      <p>{maximumProfit(prices).buyDate}</p>
-      <p>{maximumProfit(prices).sellDate}</p>
-      <p>{maximumProfit(prices).profit}</p>
+      <p>{maximumProfitObj.buyDate}</p>
+      <p>{maximumProfitObj.sellDate}</p>
+      <p>{maximumProfitObj.profit}</p>
     </div>
   );
 }

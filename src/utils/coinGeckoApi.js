@@ -5,7 +5,7 @@ const BASE_URL =
 
 export async function fetchBitcoinMarketData(from, to) {
   const response = await fetch(
-    `${BASE_URL}?vs_currency=eur&from=${from / 1000}&to=${to / 1000}`
+    `${BASE_URL}?vs_currency=eur&from=${from / 1000}&to=${to / 1000 + 3600}`
   );
   const data = await response.json();
 
@@ -21,5 +21,5 @@ function oneByDate(data) {
     const utcDate = toUTCDateString(time);
     oneByDate[utcDate] = oneByDate[utcDate] || value;
   });
-  return Object.entries(oneByDate);
+  return oneByDate;
 }
