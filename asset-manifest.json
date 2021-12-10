@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/jon1vk/bitcoin-market-analyzer/static/css/main.2be54283.chunk.css",
-    "main.js": "/jon1vk/bitcoin-market-analyzer/static/js/main.9c64bc96.chunk.js",
-    "main.js.map": "/jon1vk/bitcoin-market-analyzer/static/js/main.9c64bc96.chunk.js.map",
-    "runtime-main.js": "/jon1vk/bitcoin-market-analyzer/static/js/runtime-main.14362d2f.js",
-    "runtime-main.js.map": "/jon1vk/bitcoin-market-analyzer/static/js/runtime-main.14362d2f.js.map",
-    "static/js/2.0b871552.chunk.js": "/jon1vk/bitcoin-market-analyzer/static/js/2.0b871552.chunk.js",
-    "static/js/2.0b871552.chunk.js.map": "/jon1vk/bitcoin-market-analyzer/static/js/2.0b871552.chunk.js.map",
-    "index.html": "/jon1vk/bitcoin-market-analyzer/index.html",
-    "static/css/main.2be54283.chunk.css.map": "/jon1vk/bitcoin-market-analyzer/static/css/main.2be54283.chunk.css.map",
-    "static/js/2.0b871552.chunk.js.LICENSE.txt": "/jon1vk/bitcoin-market-analyzer/static/js/2.0b871552.chunk.js.LICENSE.txt"
+    "main.css": "/bitcoin-market-analyzer/static/css/main.2be54283.chunk.css",
+    "main.js": "/bitcoin-market-analyzer/static/js/main.9c64bc96.chunk.js",
+    "main.js.map": "/bitcoin-market-analyzer/static/js/main.9c64bc96.chunk.js.map",
+    "runtime-main.js": "/bitcoin-market-analyzer/static/js/runtime-main.20cb2b36.js",
+    "runtime-main.js.map": "/bitcoin-market-analyzer/static/js/runtime-main.20cb2b36.js.map",
+    "static/js/2.0b871552.chunk.js": "/bitcoin-market-analyzer/static/js/2.0b871552.chunk.js",
+    "static/js/2.0b871552.chunk.js.map": "/bitcoin-market-analyzer/static/js/2.0b871552.chunk.js.map",
+    "index.html": "/bitcoin-market-analyzer/index.html",
+    "static/css/main.2be54283.chunk.css.map": "/bitcoin-market-analyzer/static/css/main.2be54283.chunk.css.map",
+    "static/js/2.0b871552.chunk.js.LICENSE.txt": "/bitcoin-market-analyzer/static/js/2.0b871552.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.14362d2f.js",
+    "static/js/runtime-main.20cb2b36.js",
     "static/js/2.0b871552.chunk.js",
     "static/css/main.2be54283.chunk.css",
     "static/js/main.9c64bc96.chunk.js"
