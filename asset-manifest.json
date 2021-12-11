@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/bitcoin-market-analyzer/static/css/main.2be54283.chunk.css",
-    "main.js": "/bitcoin-market-analyzer/static/js/main.880053c7.chunk.js",
-    "main.js.map": "/bitcoin-market-analyzer/static/js/main.880053c7.chunk.js.map",
+    "main.css": "/bitcoin-market-analyzer/static/css/main.81040476.chunk.css",
+    "main.js": "/bitcoin-market-analyzer/static/js/main.ae82ffdc.chunk.js",
+    "main.js.map": "/bitcoin-market-analyzer/static/js/main.ae82ffdc.chunk.js.map",
     "runtime-main.js": "/bitcoin-market-analyzer/static/js/runtime-main.20cb2b36.js",
     "runtime-main.js.map": "/bitcoin-market-analyzer/static/js/runtime-main.20cb2b36.js.map",
-    "static/js/2.0b871552.chunk.js": "/bitcoin-market-analyzer/static/js/2.0b871552.chunk.js",
-    "static/js/2.0b871552.chunk.js.map": "/bitcoin-market-analyzer/static/js/2.0b871552.chunk.js.map",
+    "static/js/2.9f7f642a.chunk.js": "/bitcoin-market-analyzer/static/js/2.9f7f642a.chunk.js",
+    "static/js/2.9f7f642a.chunk.js.map": "/bitcoin-market-analyzer/static/js/2.9f7f642a.chunk.js.map",
     "index.html": "/bitcoin-market-analyzer/index.html",
-    "static/css/main.2be54283.chunk.css.map": "/bitcoin-market-analyzer/static/css/main.2be54283.chunk.css.map",
-    "static/js/2.0b871552.chunk.js.LICENSE.txt": "/bitcoin-market-analyzer/static/js/2.0b871552.chunk.js.LICENSE.txt",
+    "static/css/main.81040476.chunk.css.map": "/bitcoin-market-analyzer/static/css/main.81040476.chunk.css.map",
+    "static/js/2.9f7f642a.chunk.js.LICENSE.txt": "/bitcoin-market-analyzer/static/js/2.9f7f642a.chunk.js.LICENSE.txt",
     "static/media/logo.229e5f10.svg": "/bitcoin-market-analyzer/static/media/logo.229e5f10.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.20cb2b36.js",
-    "static/js/2.0b871552.chunk.js",
-    "static/css/main.2be54283.chunk.css",
-    "static/js/main.880053c7.chunk.js"
+    "static/js/2.9f7f642a.chunk.js",
+    "static/css/main.81040476.chunk.css",
+    "static/js/main.ae82ffdc.chunk.js"
   ]
 }
