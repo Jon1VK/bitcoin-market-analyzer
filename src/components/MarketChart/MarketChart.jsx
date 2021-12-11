@@ -1,4 +1,4 @@
-import './index.css';
+import './MarketChart.css';
 import Chart from 'chart.js/auto';
 import { useEffect, useRef } from 'react';
 import config from './config';

@@ -1,0 +1,19 @@
+.date-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.input-group {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
