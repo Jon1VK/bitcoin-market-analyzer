@@ -5,6 +5,7 @@ import MarketChart from './components/MarketChart';
 import { fetchBitcoinMarketData } from './utils/coinGeckoApi';
 import { oneMonthBefore, toDateInputValue } from './utils/time';
 import * as MarketAnalyzer from './utils/marketAnalyzer';
+import { numberWithSpaces } from './utils/format';
 
 const MIN_DATE = '2013-04-28';
 const INITIAL_START_TIME = oneMonthBefore(Date.now());
@@ -75,24 +76,23 @@ function App() {
         <div className="cards">
           <div className="card">
             <h3>Longest bearish trend</h3>
-            <p class="card-focal">{longestBearishTrend.trendLength} days</p>
+            <p className="card-focal">{longestBearishTrend.trendLength} days</p>
             <p>
               {longestBearishTrend.startDate} - {longestBearishTrend.endDate}
             </p>
           </div>
           <div className="card">
             <h3>Highest trading volume</h3>
-            <p class="card-focal">
-              {highestTradingVolume.volume
-                .toFixed(0)
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}{' '}
-              €
+            <p className="card-focal">
+              {numberWithSpaces(highestTradingVolume.volume.toFixed(0))} €
             </p>
             <p>{highestTradingVolume.date}</p>
           </div>
           <div className="card">
             <h3>Maximum profit</h3>
-            <p class="card-focal">{maximumProfit.profit.toFixed(2)} € / BTC</p>
+            <p className="card-focal">
+              {numberWithSpaces(maximumProfit.profit.toFixed(2))} € / BTC
+            </p>
             <div>
               {maximumProfit.buyDate ? (
                 <div>
