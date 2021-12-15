@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bitcoin-market-analyzer/static/css/main.81040476.chunk.css",
-    "main.js": "/bitcoin-market-analyzer/static/js/main.ae82ffdc.chunk.js",
-    "main.js.map": "/bitcoin-market-analyzer/static/js/main.ae82ffdc.chunk.js.map",
+    "main.js": "/bitcoin-market-analyzer/static/js/main.a61ba497.chunk.js",
+    "main.js.map": "/bitcoin-market-analyzer/static/js/main.a61ba497.chunk.js.map",
     "runtime-main.js": "/bitcoin-market-analyzer/static/js/runtime-main.20cb2b36.js",
     "runtime-main.js.map": "/bitcoin-market-analyzer/static/js/runtime-main.20cb2b36.js.map",
     "static/js/2.9f7f642a.chunk.js": "/bitcoin-market-analyzer/static/js/2.9f7f642a.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.20cb2b36.js",
     "static/js/2.9f7f642a.chunk.js",
     "static/css/main.81040476.chunk.css",
-    "static/js/main.ae82ffdc.chunk.js"
+    "static/js/main.a61ba497.chunk.js"
   ]
 }
