@@ -7,15 +7,22 @@ import MarketChart from './components/MarketChart';
 import logo from './logo.svg';
 import './App.css';
 
+// When the App loads, start time is set to one month before current time
 const INITIAL_START_TIME = oneMonthBefore(Date.now());
+// And end time is set to current time
 const INITIAL_END_TIME = Date.now();
 
 function App() {
-  const [startTime, setStartTime] = useState(INITIAL_START_TIME);
-  const [endTime, setEndTime] = useState(INITIAL_END_TIME);
-  const [prices, setPrices] = useState([]);
-  const [volumes, setVolumes] = useState([]);
+  // Start time of the date range as milliseconds
+  var [startTime, setStartTime] = useState(INITIAL_START_TIME);
+  // End time of the date range as milliseconds
+  var [endTime, setEndTime] = useState(INITIAL_END_TIME);
+  // Price market data of bitcoin in the selected date range
+  var [prices, setPrices] = useState({});
+  // Volume market data of bitcoin in the selected date range
+  var [volumes, setVolumes] = useState({});
 
+  // Load new bitcoin market data, when the start or end time of the date range changes
   useEffect(() => {
     fetchBitcoinMarketData(startTime, endTime).then(({ prices, volumes }) => {
       setPrices(prices);
@@ -23,11 +30,13 @@ function App() {
     });
   }, [startTime, endTime]);
 
-  const onStartDateChange = (e) =>
+  function onStartDateChange(e) {
     setStartTime(new Date(e.target.value).getTime() || INITIAL_START_TIME);
+  }
 
-  const onEndDateChange = (e) =>
+  function onEndDateChange(e) {
     setEndTime(new Date(e.target.value).getTime() || INITIAL_END_TIME);
+  }
 
   return (
     <div>
@@ -37,7 +46,7 @@ function App() {
       </header>
 
       <main>
-        <h2 class="section-title">The date range to be analyzed</h2>
+        <h2 className="section-title">The date range to be analyzed</h2>
         <DateRangeInputs
           startDate={toDateInputValue(startTime)}
           endDate={toDateInputValue(endTime)}
@@ -45,7 +54,7 @@ function App() {
           onEndDateChange={onEndDateChange}
         />
         <Cards prices={prices} volumes={volumes} />
-        <MarketChart pricesByDate={prices} volumesByDate={volumes} />
+        <MarketChart prices={prices} volumes={volumes} />
       </main>
     </div>
   );

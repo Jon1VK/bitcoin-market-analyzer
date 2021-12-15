@@ -3,11 +3,13 @@ import * as MarketAnalyzer from '../../utils/marketAnalyzer';
 import './Cards.css';
 
 function Cards({ prices, volumes }) {
-  const longestBearishTrend = MarketAnalyzer.longestBearishTrend(prices);
-  const highestTradingVolume = MarketAnalyzer.highestTradingVolume(volumes);
-  const maximumProfit = MarketAnalyzer.maximumProfit(prices);
+  // Calculate stats about current prices and volumes
+  var longestBearishTrend = MarketAnalyzer.longestBearishTrend(prices);
+  var highestTradingVolume = MarketAnalyzer.highestTradingVolume(volumes);
+  var maximumProfit = MarketAnalyzer.maximumProfit(prices);
 
-  const buyingRecommendation = maximumProfit.buyDate
+  // Depending if there is profit to be made, show different text for bying recommendation
+  var buyingRecommendation = maximumProfit.buyDate
     ? `If bought on ${maximumProfit.buyDate} and sold
       on ${maximumProfit.sellDate}`
     : `Bitcoins should not be bought on the selected date range`;

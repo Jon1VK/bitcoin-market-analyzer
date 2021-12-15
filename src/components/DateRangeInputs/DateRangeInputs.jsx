@@ -1,6 +1,7 @@
 import { toDateInputValue } from '../../utils/time';
 import './DateRangeInputs.css';
 
+// First date that the CoinGecko market API has data of Bitcoin
 const MIN_DATE = '2013-04-28';
 
 function DateRangeInputs({

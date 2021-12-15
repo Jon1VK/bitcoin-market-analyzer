@@ -1,5 +1,6 @@
 import { Tooltip } from 'chart.js';
 
+// Custom tooltip positioner
 Tooltip.positioners.bottom = function (items) {
   const chart = this._chart;
   const pos = Tooltip.positioners.average(items);
@@ -12,6 +13,7 @@ Tooltip.positioners.bottom = function (items) {
     : false;
 };
 
+// Configuration of the chart, check chart.js docs
 const config = {
   data: {
     datasets: [
@@ -90,7 +92,6 @@ const config = {
           label: (item) => `${item.dataset.label} ${item.formattedValue} €`,
           labelPointStyle: () => ({
             pointStyle: 'circle',
-            pointRadius: 0,
           }),
         },
       },
